@@ -4,7 +4,7 @@ import Sidebar from './Sidebar'
 import { useOrders } from '../../store/useOrders'
 import { useLogs } from '../../store/useLogs'
 import { playPaymentSound } from '../../hooks/useAudioNotification'
-const PIN = import.meta.env.VITE_ADMIN_PIN ?? '1234' // kosongkan (VITE_ADMIN_PIN=) untuk menonaktifkan PIN
+const PIN = (import.meta as unknown as { env: Record<string, string | undefined> }).env.VITE_ADMIN_PIN ?? '1234' // kosongkan (VITE_ADMIN_PIN=) untuk menonaktifkan PIN
 const KEY = 'restoku-admin'
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const [ok, setOk] = useState(() => !PIN || sessionStorage.getItem(KEY) === '1')
