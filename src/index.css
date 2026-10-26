@@ -1,0 +1,7 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+@layer base {
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  h1,h2,h3 { @apply font-serif; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-gold; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
